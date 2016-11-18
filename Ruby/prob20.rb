@@ -1,0 +1,1 @@
+puts (1..100).reduce(:*).to_s.chars.map{|t| t.to_i}.reduce(:+)

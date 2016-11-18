@@ -1,0 +1,1 @@
+puts (1..100).flat_map{|a| (1..100).map{|b| (a**b).to_s.split(//).map{|x| x.to_i}.reduce(:+)}}.sort{|x,y| y<=>x}.first

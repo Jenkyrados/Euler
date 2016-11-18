@@ -1,0 +1,2 @@
+perms9 = "123456789".split(//).permutation(9).to_a.map{|a| a.join}.sort
+p "2345678".split(//).permutation(3).to_a.map{|a| a.join.to_i+9000}.select{|a| !perms9.bsearch{ |val| (a.to_s.concat((a*2).to_s)) <=> val}.nil?}

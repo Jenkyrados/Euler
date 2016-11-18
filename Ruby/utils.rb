@@ -99,3 +99,19 @@ def icubert(n)
     end
   end
 end
+
+# Hashtag Farey <3 to antiaverage
+def coprime_gen(n)
+  return Enumerator.new do |yielder|
+    a = 0
+    b = 1
+    c = 1
+    d = n
+    yielder.yield [a,b]
+    while c <= n
+      k = ((n+b).to_f/d).floor
+      a,b,c,d = c,d,k*c-a, k*d-b
+      yielder.yield [a,b]
+    end
+  end
+end

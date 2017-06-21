@@ -1,7 +1,24 @@
 class String
   def palindrome?
     self == self.reverse
-x  end
+  end
+end
+
+def modexp(a,pow,mod)
+	stack=[]
+	while pow > 1
+		stack << pow%2
+		pow = pow/2
+	end
+	res = a
+	for x in stack.reverse
+		res *=res
+		if x == 1
+			res*=a
+		end
+		res %= mod
+	end
+	return res
 end
 
 def splitspace(data)
@@ -115,3 +132,4 @@ def coprime_gen(n)
     end
   end
 end
+

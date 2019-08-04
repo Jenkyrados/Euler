@@ -16,7 +16,6 @@
       end
     end
   end
-=begin
 
 # Cache the squares modulus 11, 63, 64, and 65. This is used to check
 # for non-squares, since a square is a square mod k for all k. The
@@ -25,9 +24,8 @@
   $squares = {}
   [11, 63, 64, 65].each do |m|
     $squares[m] = [false] * m
-    (0...(m/2)).each {|i| $squares[m][i**2 % m] = true}
+    (0..(m/2)).each {|i| $squares[m][i**2 % m] = true}
   end
-=end
 
 
 # Algorithm 1.7.3 (Square Test). Given a positive integer n,
@@ -35,15 +33,12 @@
 # and if it is, outputs the square root of n. We assume the
 # precomputations made above.
   def issquare(n)
-=begin
     return false unless $squares[64][n % 64]
 
     r = n % 45045 # 45045 = 63*65*11
     return false unless $squares[63][r % 63]
     return false unless $squares[65][r % 65]
     return false unless $squares[11][r % 11]
-=end
-
     q = isqrt(n)
     return q**2 == n ? q : false
 end

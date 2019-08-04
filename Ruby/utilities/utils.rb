@@ -1,9 +1,3 @@
-class String
-  def palindrome?
-    self == self.reverse
-  end
-end
-
 def modexp(a,pow,mod)
 	stack=[]
 	while pow > 1
@@ -41,7 +35,7 @@ module FrozenCacher
 end
 class Integer
   include FrozenCacher
-  require './sqrttest'
+  require_relative './sqrttest'
   def fact
     fcache[:fact] ||= ((1..self).reduce(:*) || 1)
   end

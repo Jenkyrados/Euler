@@ -1,4 +1,4 @@
-require './utils'
+require '../utilities/sqrttest'
 require 'bigdecimal'
 sum = 0
 (2..100).each do |s|
